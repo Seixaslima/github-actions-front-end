@@ -1,0 +1,24 @@
+name: "CD (Continuos delivery): Main workflow"
+
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: instalando dependencias
+        run: npm i
+      - name: build
+        run: npm run build
+      - name: deploy
+        run: npm run deploy
