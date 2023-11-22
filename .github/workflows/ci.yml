@@ -1,0 +1,17 @@
+name: "CI (Continuos integration): first action"
+
+on:
+  pull_request:
+    types: ["opened", "synchronize"]
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: instalando dependencias
+        run: npm i
+      - name: rodando lint
+        run: npm run lint
