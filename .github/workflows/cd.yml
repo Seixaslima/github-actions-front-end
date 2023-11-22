@@ -19,9 +19,9 @@ jobs:
       - name: teste
         run: echo "$VERCEL_TOKEN"
 
-      # - name: instalando dependencias
-      #   run: npm i
-      # - name: build
-      #   run: npm run build
-      # - name: deploy
-      #   run: npm run deploy:prod
+      - name: instalando dependencias
+        run: npm i
+      - name: build
+        run: npm run build
+      - name: deploy
+        run: npm run deploy:prod
