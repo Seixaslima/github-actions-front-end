@@ -16,9 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: teste
-        run: echo "$VERCEL_TOKEN"
-
       - name: instalando dependencias
         run: npm i
       - name: build
