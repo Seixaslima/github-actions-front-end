@@ -9,7 +9,7 @@
     "lint": "next lint ",
     "lint:fix": "next lint --fix",
     "deploy": " npx vercel ./out --yes",
-    "deploy:prod": "npm run deploy --prod --token $VERCEL_TOKEN"
+    "deploy:prod": "npx vercel ./out --yes --prod --token $VERCEL_TOKEN"
   },
   "dependencies": {
     "lint": "^0.8.19",
