@@ -20,7 +20,7 @@ const defaultHeaders = {};
 defaultHeaders["accept"] = "application/vnd.github+json";
 defaultHeaders["content-type"] = "application/json";
 defaultHeaders["X-GitHub-Api-Version"] = "2022-11-28";
-defaultHeaders["Authorization"] = `Bearer ${GITHUB_TOKEN}`;
+defaultHeaders["Authorization"] = `token ${GITHUB_TOKEN}`;
 
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
@@ -36,7 +36,6 @@ fetch(
   },
 )
   .then((response) => {
-    console.log("response", response);
     if (response.ok) return response.json();
     throw new Error(response.statusText);
   })
