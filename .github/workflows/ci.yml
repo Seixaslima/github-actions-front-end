@@ -1,4 +1,4 @@
-name: "CI (Continuos integration): first action"
+name: "CI (Continuos integration): main action"
 
 env:
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -32,4 +32,4 @@ jobs:
       - name: instalando dependencias
         run: npm i
       - name: publicando preview
-        run: npm run lint
+        run: npm run deploy:preview
