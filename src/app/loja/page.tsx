@@ -1,11 +1,11 @@
 import Link from "next/link";
 
-export default function about() {
+export default function loja() {
   return (
     <main>
-      <h1>Sobre[preview]</h1>
+      <h1>Loja</h1>
       <Link href="./">Home</Link>
-      <Link href="./loja">Loja</Link>
+      <Link href="./sobre">Sobre</Link>
     </main>
   );
 }

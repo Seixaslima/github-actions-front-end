@@ -13,16 +13,16 @@ on:
     types: ["opened", "synchronize"]
 
 jobs:
-  # linter:
-  #   runs-on: ubuntu-latest
+  linter:
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - uses: actions/checkout@v3
+    steps:
+      - uses: actions/checkout@v3
 
-  #     - name: instalando dependencias
-  #       run: npm i
-  #     - name: rodando lint
-  #       run: npm run lint
+      - name: instalando dependencias
+        run: npm i
+      - name: rodando lint
+        run: npm run lint
 
   preview:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
 
       - name: instalando dependencias
         run: npm i
-      # - name: build
-      #   run: npm run build
+      - name: build
+        run: npm run build
       - name: publicando preview
         run: npm run deploy:preview
