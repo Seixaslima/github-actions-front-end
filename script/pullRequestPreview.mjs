@@ -22,6 +22,7 @@ defaultHeaders["content-type"] = "application/json";
 
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
+console.log("GITHUB_TOKEN", GITHUB_TOKEN);
 
 fetch(
   `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
@@ -29,16 +30,16 @@ fetch(
     headers: defaultHeaders,
     method: "POST",
     body: JSON.stringify({
-      body: GH_COMMENT
-    })
-  }
+      body: GH_COMMENT,
+    }),
+  },
 )
-  .then(response => {
+  .then((response) => {
     console.log("response", response);
     if (response.ok) return response.json();
     throw new Error(response.statusText);
   })
-  .catch(err => {
+  .catch((err) => {
     console.log("[COMMENT_ON_GITHUB: ERROR]");
     throw new Error(err);
   })
