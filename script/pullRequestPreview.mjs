@@ -20,6 +20,7 @@ const defaultHeaders = {};
 defaultHeaders["authorization"] = `Bearer ${GITHUB_TOKEN}`;
 defaultHeaders["accept"] = "application/vnd.github+json";
 defaultHeaders["content-type"] = "application/json";
+defaultHeaders["X-GitHub-Api-Version"] = "2022-11-28";
 
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
