@@ -30,16 +30,16 @@ fetch(
     headers: defaultHeaders,
     method: "POST",
     body: JSON.stringify({
-      body: GH_COMMENT
-    })
-  }
+      body: GH_COMMENT,
+    }),
+  },
 )
-  .then(response => {
+  .then((response) => {
     console.log("response", response);
     if (response.ok) return response.json();
     throw new Error(response.statusText);
   })
-  .catch(err => {
+  .catch((err) => {
     console.log("[COMMENT_ON_GITHUB: ERROR]");
     throw new Error(err);
   })
