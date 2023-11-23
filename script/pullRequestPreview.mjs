@@ -1,5 +1,4 @@
 import { execSync } from "child_process";
-import fetch from 'node-fetch';
 
 console.log("[DEPLOY_PREVIEW]: START");
 const command = "npm run deploy:staging";
@@ -11,6 +10,7 @@ console.log("[DEPLOY_PREVIEW]: END");
 console.log(`You can see the deploy preview on: ${DEPLOY_URL}`);
 
 console.log("[GITHUB_COMMENT]: START");
+console.log("env", process.env);
 const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER } = process.env;
 const GH_COMMENT = `
 - Deploy URL: [${DEPLOY_URL}](${DEPLOY_URL})
