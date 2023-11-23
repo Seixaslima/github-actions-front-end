@@ -61,7 +61,8 @@ fetch(
   `https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${GITHUB_PR_NUMBER}/comments`,
   {
     headers: defaultHeaders,
-    method: "GET",
+    method: "POST",
+    body: "Teste",
   },
 )
   .then((response) => {
