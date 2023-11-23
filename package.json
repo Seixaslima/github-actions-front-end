@@ -8,8 +8,9 @@
     "start": "next start",
     "lint": "next lint ",
     "lint:fix": "next lint --fix",
-    "deploy": " npx vercel ./out --yes",
-    "deploy:prod": "npx vercel ./out --yes --prod --token $VERCEL_TOKEN"
+    "deploy:prod": "npx vercel ./out --yes --prod --token $VERCEL_TOKEN",
+    "deploy:staging": "npx vercel ./out --yes --token $VERCEL_TOKEN",
+    "deploy:preview": "node ./script/pullRequestPreview.js"
   },
   "dependencies": {
     "lint": "^0.8.19",
