@@ -16,9 +16,8 @@ const GH_COMMENT = `
 `;
 
 const defaultHeaders = {};
-defaultHeaders["authorization"] = `token ${GITHUB_TOKEN}`;
-defaultHeaders["accept"] =
-  "application/vnd.github.v3+json; application/vnd.github.antiope-preview+json";
+defaultHeaders["authorization"] = `Bearer ${GITHUB_TOKEN}`;
+defaultHeaders["accept"] = "application/vnd.github+json";
 defaultHeaders["content-type"] = "application/json";
 
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
@@ -30,16 +29,16 @@ fetch(
     headers: defaultHeaders,
     method: "POST",
     body: JSON.stringify({
-      body: GH_COMMENT,
-    }),
-  },
+      body: GH_COMMENT
+    })
+  }
 )
-  .then((response) => {
+  .then(response => {
     console.log("response", response);
     if (response.ok) return response.json();
     throw new Error(response.statusText);
   })
-  .catch((err) => {
+  .catch(err => {
     console.log("[COMMENT_ON_GITHUB: ERROR]");
     throw new Error(err);
   })
