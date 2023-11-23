@@ -57,7 +57,7 @@ defaultHeaders["X-GitHub-Api-Version"] = "2022-11-28";
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
 console.log("GITHUB_PR_NUMBER", GITHUB_PR_NUMBER);
 
-fetch(`https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls`, {
+fetch(`https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/comments`, {
   headers: defaultHeaders,
   method: "GET",
 })
