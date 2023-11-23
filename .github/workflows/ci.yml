@@ -31,7 +31,7 @@ jobs:
 
       - name: instalando dependencias
         run: npm i
-      - name: build
-        run: npm run build
+      # - name: build
+      #   run: npm run build
       - name: publicando preview
         run: npm run deploy:preview
