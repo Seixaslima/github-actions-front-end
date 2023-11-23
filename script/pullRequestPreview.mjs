@@ -47,11 +47,12 @@ fetch(
   });*/
 
 console.log("[TESTE]: START");
-const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER } = process.env;
+const { GITHUB_TOKEN, GITHUB_REPOSITORY, GITHUB_PR_NUMBER, KEY_POST } =
+  process.env;
 
 const defaultHeaders = {};
 defaultHeaders["Accept"] = "application/vnd.github+json";
-defaultHeaders["Authorization"] = `token ${GITHUB_TOKEN}`;
+defaultHeaders["Authorization"] = `token ${KEY_POST}`;
 defaultHeaders["X-GitHub-Api-Version"] = "2022-11-28";
 
 console.log("GITHUB_REPOSITORY", GITHUB_REPOSITORY);
