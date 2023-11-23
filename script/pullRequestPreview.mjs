@@ -63,7 +63,7 @@ fetch(
   {
     headers: defaultHeaders,
     method: "POST",
-    body: "Teste",
+    body: JSON.stringify({ body: "teste" }),
   },
 )
   .then((response) => {
