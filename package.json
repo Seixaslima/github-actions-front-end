@@ -1,6 +1,5 @@
 {
   "name": "github-actions-front-end",
-  "type": "module",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +10,7 @@
     "lint:fix": "next lint --fix",
     "deploy:prod": "npx vercel ./out --yes --prod --token $VERCEL_TOKEN",
     "deploy:staging": "npx vercel ./out --yes --token $VERCEL_TOKEN",
-    "deploy:preview": "node ./script/pullRequestPreview.js"
+    "deploy:preview": "node ./script/pullRequestPreview.mjs"
   },
   "dependencies": {
     "lint": "^0.8.19",
