@@ -1,4 +1,12 @@
-name: "CI (Continuos integration): first action"
+name: "CI (Continuos integration): main action"
+
+env:
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  KEY_POST: ${{ secrets.KEY_POST }}
+  GITHUB_PR_NUMBER: ${{ github.event.pull_request.number }}
 
 on:
   pull_request:
@@ -15,3 +23,36 @@ jobs:
         run: npm i
       - name: rodando lint
         run: npm run lint
+
+  preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: instalando dependencias
+        run: npm i
+      - name: build
+        run: npm run build
+      - name: publicando preview
+        run: npm run deploy:preview
+
+  test_e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+          with:
+            node-version: '18.17.1'
+            cache: 'npm'
+    
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+
+      - name: instalando dependencias
+        run: npm i
+      - name: test e2e
+        run: npm run test:e2e
