@@ -36,3 +36,23 @@ jobs:
         run: npm run build
       - name: publicando preview
         run: npm run deploy:preview
+
+  test_e2e:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v4
+          with:
+            node-version: '18.17.1'
+            cache: 'npm'
+    
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+
+      - name: instalando dependencias
+        run: npm i
+      - name: test e2e
+        run: npm run test:e2e
