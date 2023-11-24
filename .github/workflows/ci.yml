@@ -50,8 +50,3 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           browser: chrome
-
-      - name: instalando dependencias
-        run: npm i
-      - name: test e2e
-        run: npm run test:e2e
